@@ -1,9 +1,0 @@
-usar enums para economizar memória:
-	círculo de magia
-	escolas de magia
-
-implementar carta em level de detalhe simples (apenas nome, circulo e componentes, talvez duração)
-implementar carta em level de detalhe completo (todas as informações)
-
-
-implementar montagem de decks
