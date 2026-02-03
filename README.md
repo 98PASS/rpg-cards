@@ -1,4 +1,8 @@
-This repository is a personal project that I hope will find your DnD table.
+## This repository is a personal project that I hope will find your DnD table.
 
-The idea is for it to be a customizable spellbook, so every player can operate theyr spells easily and without having to open websites or consulting books.
-The main focus will be the user experience, think about this project as a game, even though it's a tool.
+#### The idea is for it to be a customizable spellbook, so every player can operate theyr spells easily and without having to open websites or consulting books.
+#### The main focus will be the user experience, think about this project as a game, even though it's a tool.
+---
+### Steps to test the card application:
+> 1. Run the *Card/Parser/parser.gd* to build your card data from the json in *Card/Data/brute_data/rpg-cards.json* file
+> 2. Test the card layout by running **Main2D.tscn**
