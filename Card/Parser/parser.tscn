@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://dqcmsca4oacx7"]
-
-[ext_resource type="Script" uid="uid://d1o1uhbesvpgm" path="res://Card/Parser/parser.gd" id="1_uff0l"]
-
-[node name="parser" type="Node" unique_id=1427104187]
-script = ExtResource("1_uff0l")
