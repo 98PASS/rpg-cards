@@ -1,0 +1,8 @@
+# Godot 4+
+.godot/
+
+# Export builds
+/android/
+
+# Dados gerados / processados
+/Card/Data/Spells/

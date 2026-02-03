@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b32wvdqj1yvat"]
+
+[ext_resource type="PackedScene" uid="uid://c8ms0g4l6yvtb" path="res://Card/SpellCard2DScene/spell_card_2d.tscn" id="1_feeyt"]
+[ext_resource type="Resource" uid="uid://cp5ttodu07e7i" path="res://Card/Data/Spells/Alarm.res" id="2_irimm"]
+
+[node name="Main2d" type="Node2D" unique_id=1704771771]
+
+[node name="Card2D" parent="." unique_id=111510045 instance=ExtResource("1_feeyt")]
+scale = Vector2(4, 4)
+spell = ExtResource("2_irimm")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=473696013]

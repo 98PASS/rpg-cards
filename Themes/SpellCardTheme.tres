@@ -1,0 +1,28 @@
+[gd_resource type="Theme" format=3 uid="uid://bepk4quaq3lo7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdt26"]
+bg_color = Color(0.5399993, 0.3317204, 0.052275814, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_essr3"]
+bg_color = Color(0.06685345, 0.20828086, 0.27296507, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[resource]
+LabelCardTag/base_type = &"LabelCardTitle"
+LabelCardTag/font_sizes/font_size = 4
+LabelCardTitle/base_type = &"Label"
+LabelCardTitle/font_sizes/font_size = 5
+PanelContainerTag/base_type = &"PanelContainer"
+PanelContainerTag/styles/panelConcentration = SubResource("StyleBoxFlat_jdt26")
+PanelContainerTag/styles/panelRitual = SubResource("StyleBoxFlat_essr3")

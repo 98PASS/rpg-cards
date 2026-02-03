@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://dne2uoxl1puwx"]
+
+[ext_resource type="Texture2D" uid="uid://cec26n84g7ak1" path="res://Card/Assets/Icon.png" id="1_01fq7"]
+
+[node name="VBoxContainer" type="VBoxContainer" unique_id=836598950]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -114.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SpellNameLabel" type="Label" parent="." unique_id=1521292338]
+layout_mode = 2
+theme_override_font_sizes/font_size = 5
+text = "Spell Name"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2024404377]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="SpellSchoolLabel" type="Label" parent="HBoxContainer" unique_id=2004575475]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 4
+text = "Spell School"
+horizontal_alignment = 1
+
+[node name="SpellCircleLabel" type="Label" parent="HBoxContainer" unique_id=1912517741]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 4
+text = "Circle"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="." unique_id=1331421632]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=26299250]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2" unique_id=789322943]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_01fq7")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="SpellCastTimeLabelConstant" type="Label" parent="HBoxContainer2" unique_id=1344541407]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 4
+text = "Cast Time:"
+
+[node name="SpellCastTimeLabel" type="Label" parent="HBoxContainer2" unique_id=1600723728]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 4
+text = "Cast Time"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="." unique_id=534921556]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer3" unique_id=1868489904]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_01fq7")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="SpellRangeLabelConstant" type="Label" parent="HBoxContainer3" unique_id=1900728949]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 4
+text = "Range:"
+
+[node name="SpellRangeLabel" type="Label" parent="HBoxContainer3" unique_id=1918290499]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 4
+text = "Range"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="." unique_id=52548677]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="." unique_id=2088864860]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer4" unique_id=633239670]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_01fq7")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="SpellDurationLabelConstant" type="Label" parent="HBoxContainer4" unique_id=990839274]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 4
+text = "Duration:"
+
+[node name="SpellDurationLabel" type="Label" parent="HBoxContainer4" unique_id=535084211]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 4
+text = "Duration"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="." unique_id=622172410]
+layout_mode = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="." unique_id=700013658]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="SpellComponentsLabelConstant" type="Label" parent="HBoxContainer5" unique_id=1763206508]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 4
+text = "Components:"
+
+[node name="SpellComponentsLabel" type="Label" parent="HBoxContainer5" unique_id=1496765421]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 4
+text = "Components"
+horizontal_alignment = 1
+autowrap_mode = 2

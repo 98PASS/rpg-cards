@@ -1,0 +1,278 @@
+[gd_scene format=3 uid="uid://c8ms0g4l6yvtb"]
+
+[ext_resource type="Script" uid="uid://b2n0tghwjww08" path="res://Card/SpellCard2DScene/spell_card_2d.gd" id="1_40xc3"]
+[ext_resource type="Texture2D" uid="uid://cec26n84g7ak1" path="res://Card/Assets/Icon.png" id="3_40xc3"]
+[ext_resource type="Texture2D" uid="uid://bgdrlue2mu77l" path="res://Card/Assets/Card_70x120.png" id="3_bo6hr"]
+[ext_resource type="Texture2D" uid="uid://cgtp1ehyvffgi" path="res://Card/Assets/Icon_Verbal.png" id="4_njw7y"]
+[ext_resource type="Texture2D" uid="uid://ukuehckn178a" path="res://Card/Assets/Icon_Somatic.png" id="5_bjnr3"]
+[ext_resource type="Texture2D" uid="uid://brtml0vi7tj4h" path="res://Card/Assets/Icon_Material.png" id="6_jdt26"]
+[ext_resource type="Theme" uid="uid://bepk4quaq3lo7" path="res://Themes/SpellCardTheme.tres" id="7_jdt26"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_essr3"]
+bg_color = Color(0.06685345, 0.20828086, 0.27296507, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdt26"]
+bg_color = Color(0.5399993, 0.3317204, 0.052275814, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[node name="Card2D" type="Node2D" unique_id=111510045]
+script = ExtResource("1_40xc3")
+
+[node name="Card70x120" type="Sprite2D" parent="." unique_id=2111206435]
+texture = ExtResource("3_bo6hr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Card70x120" unique_id=1800714041]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -114.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_jdt26")
+
+[node name="SpellNameLabel" type="Label" parent="Card70x120/VBoxContainer" unique_id=1577227863]
+layout_mode = 2
+theme_type_variation = &"LabelCardTitle"
+text = "Spell Name"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Card70x120/VBoxContainer" unique_id=4993414]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="SpellSchoolLabel" type="Label" parent="Card70x120/VBoxContainer/HBoxContainer" unique_id=1167558252]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 4
+text = "Spell School"
+horizontal_alignment = 1
+
+[node name="SpellCircleLabel" type="Label" parent="Card70x120/VBoxContainer/HBoxContainer" unique_id=74943852]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 4
+text = "Circle"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Card70x120/VBoxContainer" unique_id=331701193]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Card70x120/VBoxContainer" unique_id=1979964160]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Card70x120/VBoxContainer/HBoxContainer2" unique_id=1668928255]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_40xc3")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="SpellCastTimeLabelConstant" type="Label" parent="Card70x120/VBoxContainer/HBoxContainer2" unique_id=1462751876]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"CardLabelProperty"
+theme_override_font_sizes/font_size = 4
+text = "Cast Time:"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="SpellCastTimeLabel" type="Label" parent="Card70x120/VBoxContainer/HBoxContainer2" unique_id=680025417]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"CardLabelProperty"
+theme_override_font_sizes/font_size = 4
+text = "Cast Time"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Card70x120/VBoxContainer" unique_id=51839675]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Card70x120/VBoxContainer/HBoxContainer3" unique_id=1709049774]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_40xc3")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="SpellRangeLabelConstant" type="Label" parent="Card70x120/VBoxContainer/HBoxContainer3" unique_id=670561817]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"CardLabelProperty"
+theme_override_font_sizes/font_size = 4
+text = "Range:"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="SpellRangeLabel" type="Label" parent="Card70x120/VBoxContainer/HBoxContainer3" unique_id=71700832]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"CardLabelProperty"
+theme_override_font_sizes/font_size = 4
+text = "Range"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="HSeparator2" type="HSeparator" parent="Card70x120/VBoxContainer" unique_id=1070013695]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Card70x120/VBoxContainer" unique_id=2033645314]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Card70x120/VBoxContainer/HBoxContainer4" unique_id=291855074]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_40xc3")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="SpellDurationLabelConstant" type="Label" parent="Card70x120/VBoxContainer/HBoxContainer4" unique_id=630633404]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"CardLabelProperty"
+theme_override_font_sizes/font_size = 4
+text = "Duration:"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="SpellDurationLabel" type="Label" parent="Card70x120/VBoxContainer/HBoxContainer4" unique_id=6249731]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"CardLabelProperty"
+theme_override_font_sizes/font_size = 4
+text = "Duration"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="HSeparator3" type="HSeparator" parent="Card70x120/VBoxContainer" unique_id=1034544065]
+layout_mode = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Card70x120/VBoxContainer" unique_id=1676968550]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="SpellComponentsLabelConstant" type="Label" parent="Card70x120/VBoxContainer/HBoxContainer5" unique_id=902428217]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"CardLabelProperty"
+theme_override_font_sizes/font_size = 4
+text = "Components:"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="SpellComponentsLabel" type="Label" parent="Card70x120/VBoxContainer/HBoxContainer5" unique_id=1738152239]
+process_mode = 4
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"CardLabelProperty"
+theme_override_font_sizes/font_size = 4
+text = "Components"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Card70x120/VBoxContainer/HBoxContainer5" unique_id=189519142]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="TextureRectV" type="TextureRect" parent="Card70x120/VBoxContainer/HBoxContainer5/HBoxContainer" unique_id=1338917269]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_njw7y")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TextureRectS" type="TextureRect" parent="Card70x120/VBoxContainer/HBoxContainer5/HBoxContainer" unique_id=2013063344]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_bjnr3")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TextureRectM" type="TextureRect" parent="Card70x120/VBoxContainer/HBoxContainer5/HBoxContainer" unique_id=231898927]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_jdt26")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Card70x120" unique_id=505788563]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -35.0
+offset_top = -60.0
+offset_right = -35.0
+offset_bottom = -56.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme = ExtResource("7_jdt26")
+alignment = 1
+
+[node name="RitualPanelTag" type="PanelContainer" parent="Card70x120/HBoxContainer" unique_id=1449561420]
+custom_minimum_size = Vector2(4, 4)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_type_variation = &"PanelContainerTag"
+theme_override_styles/panel = SubResource("StyleBoxFlat_essr3")
+
+[node name="LabelRitualTag" type="Label" parent="Card70x120/HBoxContainer/RitualPanelTag" unique_id=262088350]
+layout_mode = 2
+theme = ExtResource("7_jdt26")
+theme_type_variation = &"LabelCardTag"
+text = "Ritual"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ConcentrationPanelTag" type="PanelContainer" parent="Card70x120/HBoxContainer" unique_id=683121193]
+custom_minimum_size = Vector2(4, 4)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_type_variation = &"PanelContainerTag"
+theme_override_styles/panel = SubResource("StyleBoxFlat_jdt26")
+
+[node name="LabelContentrationTag" type="Label" parent="Card70x120/HBoxContainer/ConcentrationPanelTag" unique_id=60212518]
+layout_mode = 2
+theme = ExtResource("7_jdt26")
+theme_type_variation = &"LabelCardTag"
+text = "Concentration"
+horizontal_alignment = 1
+vertical_alignment = 1
