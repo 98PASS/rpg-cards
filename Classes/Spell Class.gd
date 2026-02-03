@@ -1,8 +1,19 @@
 class_name SpellResource extends Resource
 
+enum MagicSchool {
+	ABJURATION,
+	CONJURATION,
+	DIVINATION,
+	ENCHANTMENT,
+	EVOCATION,
+	ILLUSION,
+	NECROMANCY,
+	TRANSMUTATION
+}
+
 @export var spell_name: String = ""
 @export var circle: int = 0
-@export var school: String = ""
+@export var school: MagicSchool
 @export var casting_time: String = ""
 @export var spell_range: String = ""  # Usando String pois pode ter "Touch", "Self", etc.
 @export var components: String = ""
@@ -20,7 +31,7 @@ class_name SpellResource extends Resource
 # Função para formatar a saída igual ao exemplo
 func _to_string() -> String:
 	var output = "Spell Name:\t" + spell_name + "\n"
-	output += "Circle:\t" + str(circle) + "\nSchool:\t" + school + "\n"
+	output += "Circle:\t" + str(circle) + "\nSchool:\t" + magic_school_to_string(school) + "\n"
 	output += "Casting Time:\t" + casting_time + "\nRange:\t" + spell_range + "\nComponents:\t" + components + "\nDuration:\t" + duration + "\n"
 	output += "Description:\n" + description + "\n"
 	if at_higher_levels != "":
@@ -34,7 +45,7 @@ static func create_from_processed_data(data: Dictionary) -> SpellResource:
 	var spell = SpellResource.new()
 	spell.spell_name = data.get("spell_name", "")
 	spell.circle = data.get("circle", 0)
-	spell.school = data.get("school", "")
+	spell.school = _string_to_magic_school(data.get("school", "")) 
 	spell.casting_time = data.get("casting_time", "")
 	spell.spell_range = data.get("spell_range", "")
 	spell.components = data.get("components", "")
@@ -74,3 +85,27 @@ static func _treat_components(spell: SpellResource) -> void:
 		open + 1,
 		close - open - 1
 	).strip_edges()
+
+static func _string_to_magic_school(value: String) -> MagicSchool:
+	match value.to_lower():
+		"abjuration": return MagicSchool.ABJURATION
+		"conjuration": return MagicSchool.CONJURATION
+		"divination": return MagicSchool.DIVINATION
+		"enchantment": return MagicSchool.ENCHANTMENT
+		"evocation": return MagicSchool.EVOCATION
+		"illusion": return MagicSchool.ILLUSION
+		"necromancy": return MagicSchool.NECROMANCY
+		"transmutation": return MagicSchool.TRANSMUTATION
+		_: return MagicSchool.ABJURATION # default / fallback
+
+static func magic_school_to_string(school: MagicSchool) -> String:
+	match school:
+		MagicSchool.ABJURATION: return "Abjuration"
+		MagicSchool.CONJURATION: return "Conjuration"
+		MagicSchool.DIVINATION: return "Divination"
+		MagicSchool.ENCHANTMENT: return "Enchantment"
+		MagicSchool.EVOCATION: return "Evocation"
+		MagicSchool.ILLUSION: return "Illusion"
+		MagicSchool.NECROMANCY: return "Necromancy"
+		MagicSchool.TRANSMUTATION: return "Transmutation"
+		_: return "Unknown"

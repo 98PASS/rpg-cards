@@ -20,11 +20,9 @@ func _ready() -> void:
 	_update_full_card()
 	print(spell)
 
-
-
 func _update_full_card()->void:
 	spell_name_label.text = spell.spell_name
-	spell_school_label.text = spell.school
+	spell_school_label.text = SpellResource.magic_school_to_string(spell.school)
 	spell_circle_label.text = str(spell.circle)
 	spell_cast_time_label.text = spell.casting_time
 	spell_range_label.text = spell.spell_range
@@ -32,7 +30,6 @@ func _update_full_card()->void:
 	#spell_components_label.text = spell.components
 	ritual_panel_tag.visible = spell.ritual
 	concentration_panel_tag.visible = spell.concentration
-	
 	texture_rect_v.visible = spell.verbal
 	texture_rect_s.visible = spell.somatic
 	texture_rect_m.visible = spell.material
