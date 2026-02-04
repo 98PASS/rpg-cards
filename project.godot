@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="RPG Cards"
-run/main_scene="uid://xdskujyso0cq"
+run/main_scene="uid://dvkk4emgdbrek"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [autoload]
@@ -22,11 +22,19 @@ DataAutoload="*uid://g1qg74nr6bxm"
 
 window/stretch/mode="canvas_items"
 
+[editor]
+
+movie_writer/movie_file="/home/pan/ProjetosGodot/rpg-cards/RecordingOutput/Output.mp4"
+
 [file_customization]
 
 folder_colors={
 "res://Card/Data/brute_data/": "red"
 }
+
+[global_group]
+
+CardView="CardViewUI"
 
 [gui]
 

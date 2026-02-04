@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://de7ptkgdbnd6i"]
+
+[ext_resource type="Script" uid="uid://c0fxq8xk7qvu7" path="res://UI/CardManagementUI/CardViewerMenu/CardVisualization.gd" id="1_qymna"]
+[ext_resource type="Resource" path="res://Card/Data/Spells/Blur.res" id="2_b82q1"]
+[ext_resource type="PackedScene" uid="uid://dne2uoxl1puwx" path="res://Card/UI/SpellCardUI.tscn" id="2_y33o5"]
+
+[node name="CardVisualization" type="HBoxContainer" unique_id=236170547]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+alignment = 1
+script = ExtResource("1_qymna")
+current_spell = ExtResource("2_b82q1")
+
+[node name="SpellCard" parent="." unique_id=121026816 instance=ExtResource("2_y33o5")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1353541329]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CardDescription" type="VBoxContainer" parent="ScrollContainer" unique_id=1269070165]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="SpellDescriptionPanelContainer" type="PanelContainer" parent="ScrollContainer/CardDescription" unique_id=116284026]
+layout_mode = 2
+
+[node name="SpellDescriptionVbox" type="VBoxContainer" parent="ScrollContainer/CardDescription/SpellDescriptionPanelContainer" unique_id=1571354234]
+layout_mode = 2
+
+[node name="LabelSpellDescription" type="Label" parent="ScrollContainer/CardDescription/SpellDescriptionPanelContainer/SpellDescriptionVbox" unique_id=1316415239]
+layout_mode = 2
+text = "Spell Description"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/CardDescription/SpellDescriptionPanelContainer/SpellDescriptionVbox" unique_id=1989165828]
+layout_mode = 2
+
+[node name="SpellDescriptionText" type="RichTextLabel" parent="ScrollContainer/CardDescription/SpellDescriptionPanelContainer/SpellDescriptionVbox" unique_id=1122846019]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Here comes Spell Description"
+fit_content = true
+
+[node name="AtHigherLevelsPanelContainer" type="PanelContainer" parent="ScrollContainer/CardDescription" unique_id=1615108680]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="AtHigherLevelsVbox" type="VBoxContainer" parent="ScrollContainer/CardDescription/AtHigherLevelsPanelContainer" unique_id=2095047260]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="ScrollContainer/CardDescription/AtHigherLevelsPanelContainer/AtHigherLevelsVbox" unique_id=817769039]
+layout_mode = 2
+
+[node name="LabelAtHigherLevels" type="Label" parent="ScrollContainer/CardDescription/AtHigherLevelsPanelContainer/AtHigherLevelsVbox" unique_id=296516520]
+layout_mode = 2
+size_flags_vertical = 1
+text = "At Higher Levels"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/CardDescription/AtHigherLevelsPanelContainer/AtHigherLevelsVbox" unique_id=116915350]
+layout_mode = 2
+
+[node name="AtHigherLevelsText" type="RichTextLabel" parent="ScrollContainer/CardDescription/AtHigherLevelsPanelContainer/AtHigherLevelsVbox" unique_id=893498261]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Here comes Spell Description at Higher Levels"
+fit_content = true

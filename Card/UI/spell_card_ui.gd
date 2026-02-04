@@ -1,5 +1,7 @@
 class_name SpellCardUI extends MarginContainer
 
+signal spell_selected(spell_obj : SpellResource)
+
 @export var spell : SpellResource = null
 
 @onready var ritual_panel_tag: PanelContainer = %RitualPanelTag
@@ -18,8 +20,8 @@ class_name SpellCardUI extends MarginContainer
 func _ready() -> void:
 	if spell:
 		_update_full_card()
-	else:
-		printerr("Spell data not initialized in ",name,"\n",get_stack())
+	#else:
+		#printerr("Spell data not initialized in ",name,"\n",get_stack())
 
 func _update_full_card()->void:
 	const cantrip_string = "Cantrip"
@@ -39,3 +41,8 @@ func _update_full_card()->void:
 func set_spell(spell_value : SpellResource):
 	spell = spell_value
 	_update_full_card()
+
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+			spell_selected.emit(spell)

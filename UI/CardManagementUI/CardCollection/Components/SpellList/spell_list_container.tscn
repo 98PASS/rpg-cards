@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cc7slhtw4a2wk"]
 
-[ext_resource type="Script" uid="uid://bmcvhbmf37i63" path="res://UI/CardCollection/Components/SpellList/spell_list_container.gd" id="1_0qm5e"]
+[ext_resource type="Script" uid="uid://bmcvhbmf37i63" path="res://UI/CardManagementUI/CardCollection/Components/SpellList/spell_list_container.gd" id="1_0qm5e"]
 
 [node name="SpellListContainer" type="VBoxContainer" unique_id=246045852]
 anchors_preset = 15

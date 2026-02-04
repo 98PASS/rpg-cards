@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dvkk4emgdbrek"]
+
+[ext_resource type="PackedScene" uid="uid://xdskujyso0cq" path="res://UI/CardManagementUI/CardCollection/CardCollection.tscn" id="1_01h4l"]
+[ext_resource type="PackedScene" uid="uid://de7ptkgdbnd6i" path="res://UI/CardManagementUI/CardViewerMenu/card_visualization.tscn" id="1_3d4b2"]
+[ext_resource type="Resource" uid="uid://68gytxv5wwvd" path="res://Card/Data/Spells/Web.res" id="2_n3cgy"]
+
+[node name="CardViewer" type="HSplitContainer" unique_id=1551880348]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+dragger_visibility = 2
+touch_dragger_enabled = true
+
+[node name="CardCollectionTabContainer" parent="." unique_id=1810403663 instance=ExtResource("1_01h4l")]
+layout_mode = 2
+
+[node name="CardVisualization" parent="." unique_id=236170547 groups=["CardView"] instance=ExtResource("1_3d4b2")]
+layout_mode = 2
+current_spell = ExtResource("2_n3cgy")
