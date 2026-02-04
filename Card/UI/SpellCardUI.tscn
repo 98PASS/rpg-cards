@@ -1,151 +1,277 @@
 [gd_scene format=3 uid="uid://dne2uoxl1puwx"]
 
 [ext_resource type="Texture2D" uid="uid://cec26n84g7ak1" path="res://Card/Assets/Icon.png" id="1_01fq7"]
+[ext_resource type="Theme" uid="uid://bepk4quaq3lo7" path="res://Themes/SpellCardTheme.tres" id="1_6vtjf"]
+[ext_resource type="Texture2D" uid="uid://bgdrlue2mu77l" path="res://Card/Assets/Card_70x120.png" id="1_frlgm"]
+[ext_resource type="Script" uid="uid://d14vbmvfjwhnv" path="res://Card/UI/spell_card_ui.gd" id="1_mdpdg"]
+[ext_resource type="Resource" path="res://Card/Data/Spells/Blur.res" id="3_hfjpc"]
+[ext_resource type="Texture2D" uid="uid://cgtp1ehyvffgi" path="res://Card/Assets/Icon_Verbal.png" id="3_mdpdg"]
+[ext_resource type="Texture2D" uid="uid://ukuehckn178a" path="res://Card/Assets/Icon_Somatic.png" id="4_frlgm"]
+[ext_resource type="Texture2D" uid="uid://brtml0vi7tj4h" path="res://Card/Assets/Icon_Material.png" id="5_hfjpc"]
 
-[node name="VBoxContainer" type="VBoxContainer" unique_id=836598950]
+[node name="MarginContainer" type="MarginContainer" unique_id=121026816]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -114.0
-offset_right = -6.0
-offset_bottom = -6.0
+offset_left = -86.0
+offset_top = -132.0
+offset_right = 86.0
+offset_bottom = 132.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_6vtjf")
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+script = ExtResource("1_mdpdg")
+spell = ExtResource("3_hfjpc")
 
-[node name="SpellNameLabel" type="Label" parent="." unique_id=1521292338]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=646997708]
 layout_mode = 2
-theme_override_font_sizes/font_size = 5
+texture = ExtResource("1_frlgm")
+
+[node name="Tags" type="HBoxContainer" parent="." unique_id=2026125584]
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 1
+
+[node name="RitualPanelTag" type="PanelContainer" parent="Tags" unique_id=694997923]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(4, 4)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"TagPanel_Ritual"
+
+[node name="LabelRitualTag" type="Label" parent="Tags/RitualPanelTag" unique_id=1354456338]
+layout_mode = 2
+theme_type_variation = &"CardLabel_Tag"
+text = "Ritual"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ConcentrationPanelTag" type="PanelContainer" parent="Tags" unique_id=151641785]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(4, 4)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"TagPanel_Concentration"
+
+[node name="LabelContentrationTag" type="Label" parent="Tags/ConcentrationPanelTag" unique_id=1355156283]
+layout_mode = 2
+theme_type_variation = &"CardLabel_Tag"
+text = "Concentration"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=844642155]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="SpellCardUI" type="VBoxContainer" parent="MarginContainer" unique_id=1845409085]
+custom_minimum_size = Vector2(140, 240)
+layout_mode = 2
+
+[node name="Infos" type="VBoxContainer" parent="MarginContainer/SpellCardUI" unique_id=87334952]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SpellNameLabel" type="Label" parent="MarginContainer/SpellCardUI/Infos" unique_id=1127274748]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_type_variation = &"LabelCardTitle"
 text = "Spell Name"
 horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2024404377]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/SpellCardUI/Infos" unique_id=342252880]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 8
 alignment = 1
 
-[node name="SpellSchoolLabel" type="Label" parent="HBoxContainer" unique_id=2004575475]
+[node name="SpellCircleLabel" type="Label" parent="MarginContainer/SpellCardUI/Infos/HBoxContainer" unique_id=1706961613]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 4
-text = "Spell School"
-horizontal_alignment = 1
-
-[node name="SpellCircleLabel" type="Label" parent="HBoxContainer" unique_id=1912517741]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 4
+theme_type_variation = &"CardLabel_Property"
 text = "Circle"
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="." unique_id=1331421632]
+[node name="SpellSchoolLabel" type="Label" parent="MarginContainer/SpellCardUI/Infos/HBoxContainer" unique_id=1122526929]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"CardLabel_Property"
+text = "Spell School"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/SpellCardUI/Infos" unique_id=532908860]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=26299250]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/SpellCardUI/Infos" unique_id=1977994158]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer2" unique_id=789322943]
-custom_minimum_size = Vector2(5, 5)
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/SpellCardUI/Infos/HBoxContainer2" unique_id=1327016638]
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"CardTextureRect_PropertyIcon"
 texture = ExtResource("1_01fq7")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="SpellCastTimeLabelConstant" type="Label" parent="HBoxContainer2" unique_id=1344541407]
+[node name="SpellCastTimeLabelConstant" type="Label" parent="MarginContainer/SpellCardUI/Infos/HBoxContainer2" unique_id=443546882]
+custom_minimum_size = Vector2(16, 8)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 4
+theme_type_variation = &"CardLabel_Property"
 text = "Cast Time:"
+vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="SpellCastTimeLabel" type="Label" parent="HBoxContainer2" unique_id=1600723728]
+[node name="SpellCastTimeLabel" type="Label" parent="MarginContainer/SpellCardUI/Infos/HBoxContainer2" unique_id=1235250942]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 8)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 4
+theme_type_variation = &"CardLabel_Property"
 text = "Cast Time"
-horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="." unique_id=534921556]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/SpellCardUI/Infos" unique_id=1880040338]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer3" unique_id=1868489904]
-custom_minimum_size = Vector2(5, 5)
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/SpellCardUI/Infos/HBoxContainer3" unique_id=451877811]
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"CardTextureRect_PropertyIcon"
 texture = ExtResource("1_01fq7")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="SpellRangeLabelConstant" type="Label" parent="HBoxContainer3" unique_id=1900728949]
+[node name="SpellRangeLabelConstant" type="Label" parent="MarginContainer/SpellCardUI/Infos/HBoxContainer3" unique_id=696325298]
+custom_minimum_size = Vector2(16, 8)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 4
+theme_type_variation = &"CardLabel_Property"
 text = "Range:"
+vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="SpellRangeLabel" type="Label" parent="HBoxContainer3" unique_id=1918290499]
+[node name="SpellRangeLabel" type="Label" parent="MarginContainer/SpellCardUI/Infos/HBoxContainer3" unique_id=2004782074]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 8)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 4
+theme_type_variation = &"CardLabel_Property"
 text = "Range"
-horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="HSeparator2" type="HSeparator" parent="." unique_id=52548677]
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/SpellCardUI/Infos" unique_id=952152767]
 layout_mode = 2
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="." unique_id=2088864860]
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/SpellCardUI/Infos" unique_id=2011832591]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer4" unique_id=633239670]
-custom_minimum_size = Vector2(5, 5)
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/SpellCardUI/Infos/HBoxContainer4" unique_id=1725247086]
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"CardTextureRect_PropertyIcon"
 texture = ExtResource("1_01fq7")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="SpellDurationLabelConstant" type="Label" parent="HBoxContainer4" unique_id=990839274]
+[node name="SpellDurationLabelConstant" type="Label" parent="MarginContainer/SpellCardUI/Infos/HBoxContainer4" unique_id=831732044]
+custom_minimum_size = Vector2(16, 8)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 4
+theme_type_variation = &"CardLabel_Property"
 text = "Duration:"
+vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="SpellDurationLabel" type="Label" parent="HBoxContainer4" unique_id=535084211]
+[node name="SpellDurationLabel" type="Label" parent="MarginContainer/SpellCardUI/Infos/HBoxContainer4" unique_id=1979463787]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 8)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 4
+theme_type_variation = &"CardLabel_Property"
 text = "Duration"
-horizontal_alignment = 1
-autowrap_mode = 2
+vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="HSeparator3" type="HSeparator" parent="." unique_id=622172410]
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/SpellCardUI/Infos" unique_id=1712174059]
 layout_mode = 2
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="." unique_id=700013658]
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/SpellCardUI/Infos" unique_id=964563689]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="SpellComponentsLabelConstant" type="Label" parent="HBoxContainer5" unique_id=1763206508]
+[node name="SpellComponentsLabelConstant" type="Label" parent="MarginContainer/SpellCardUI/Infos/HBoxContainer5" unique_id=1408728862]
+custom_minimum_size = Vector2(16, 8)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 4
+theme_type_variation = &"CardLabel_Property"
 text = "Components:"
+vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="SpellComponentsLabel" type="Label" parent="HBoxContainer5" unique_id=1496765421]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/SpellCardUI/Infos/HBoxContainer5" unique_id=1279301266]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 4
-text = "Components"
-horizontal_alignment = 1
-autowrap_mode = 2
+alignment = 1
+
+[node name="TextureRectV" type="TextureRect" parent="MarginContainer/SpellCardUI/Infos/HBoxContainer5/HBoxContainer" unique_id=309080940]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"CardTextureRect_PropertyIcon"
+texture = ExtResource("3_mdpdg")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TextureRectS" type="TextureRect" parent="MarginContainer/SpellCardUI/Infos/HBoxContainer5/HBoxContainer" unique_id=1304260527]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"CardTextureRect_PropertyIcon"
+texture = ExtResource("4_frlgm")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TextureRectM" type="TextureRect" parent="MarginContainer/SpellCardUI/Infos/HBoxContainer5/HBoxContainer" unique_id=1891631315]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"CardTextureRect_PropertyIcon"
+texture = ExtResource("5_hfjpc")
+expand_mode = 2
+stretch_mode = 5

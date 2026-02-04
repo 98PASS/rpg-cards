@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cc7slhtw4a2wk"]
+
+[ext_resource type="Script" uid="uid://bmcvhbmf37i63" path="res://UI/CardCollection/Components/SpellList/spell_list_container.gd" id="1_0qm5e"]
+
+[node name="SpellListContainer" type="VBoxContainer" unique_id=246045852]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_0qm5e")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=756529699]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=2059953779]
+layout_mode = 2
+text = "Organized by"
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer" unique_id=1959206740]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Name"
+popup/item_0/id = 0
+popup/item_1/text = "Circle"
+popup/item_1/id = 2
+popup/item_2/text = "School"
+popup/item_2/id = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1851479455]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1974130305]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="item_selected" from="HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]

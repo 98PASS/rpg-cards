@@ -1,7 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://bepk4quaq3lo7"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdt26"]
-bg_color = Color(0.5399993, 0.3317204, 0.052275814, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_essr3"]
+bg_color = Color(0.78297496, 0.5459882, 0.1780136, 0.50980395)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
@@ -9,8 +9,8 @@ corner_radius_bottom_left = 15
 expand_margin_left = 5.0
 expand_margin_right = 5.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_essr3"]
-bg_color = Color(0.06685345, 0.20828086, 0.27296507, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sh63c"]
+bg_color = Color(0.32111767, 0.64090145, 0.808394, 0.50980395)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
@@ -19,10 +19,13 @@ expand_margin_left = 5.0
 expand_margin_right = 5.0
 
 [resource]
-LabelCardTag/base_type = &"LabelCardTitle"
-LabelCardTag/font_sizes/font_size = 4
-LabelCardTitle/base_type = &"Label"
-LabelCardTitle/font_sizes/font_size = 5
-PanelContainerTag/base_type = &"PanelContainer"
-PanelContainerTag/styles/panelConcentration = SubResource("StyleBoxFlat_jdt26")
-PanelContainerTag/styles/panelRitual = SubResource("StyleBoxFlat_essr3")
+CardLabel_Property/base_type = &"Label"
+CardLabel_Property/font_sizes/font_size = 8
+CardLabel_Tag/base_type = &"CardLabel_Property"
+CardLabel_Tag/font_sizes/font_size = 8
+LabelCardTitle/base_type = &"CardLabel_Property"
+LabelCardTitle/font_sizes/font_size = 15
+TagPanel_Concentration/base_type = &"PanelContainer"
+TagPanel_Concentration/styles/panel = SubResource("StyleBoxFlat_essr3")
+TagPanel_Ritual/base_type = &"TagPanel_Concentration"
+TagPanel_Ritual/styles/panel = SubResource("StyleBoxFlat_sh63c")

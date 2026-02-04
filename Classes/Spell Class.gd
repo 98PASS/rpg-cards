@@ -98,8 +98,8 @@ static func _string_to_magic_school(value: String) -> MagicSchool:
 		"transmutation": return MagicSchool.TRANSMUTATION
 		_: return MagicSchool.ABJURATION # default / fallback
 
-static func magic_school_to_string(school: MagicSchool) -> String:
-	match school:
+static func magic_school_to_string(magic_school: MagicSchool) -> String:
+	match magic_school:
 		MagicSchool.ABJURATION: return "Abjuration"
 		MagicSchool.CONJURATION: return "Conjuration"
 		MagicSchool.DIVINATION: return "Divination"

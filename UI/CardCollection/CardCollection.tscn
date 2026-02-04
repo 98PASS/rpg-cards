@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://xdskujyso0cq"]
+
+[ext_resource type="Script" uid="uid://cmjuct043h7fb" path="res://UI/CardCollection/card_collection.gd" id="1_74bgg"]
+[ext_resource type="PackedScene" uid="uid://cc7slhtw4a2wk" path="res://UI/CardCollection/Components/SpellList/spell_list_container.tscn" id="2_4p3wg"]
+
+[node name="CardCollectionTabContainer" type="TabContainer" unique_id=1810403663]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+current_tab = 0
+script = ExtResource("1_74bgg")
+
+[node name="All" parent="." unique_id=1746992521 instance=ExtResource("2_4p3wg")]
+layout_mode = 2
+metadata/_tab_index = 0
